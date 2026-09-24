@@ -1,6 +1,15 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
+from pathlib import Path
+
+PROCESSED_DATA_PATH = Path("data/processed/trials_clean.csv")
+
+
+def save_processed_data(df: pd.DataFrame, path: Path = PROCESSED_DATA_PATH) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)
+
 #loads data from dwh
 def load_trials(db_password: str) -> pd.DataFrame:
     engine = create_engine(

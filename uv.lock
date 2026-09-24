@@ -1364,6 +1364,7 @@ name = "trial-conversion-model-2"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "joblib" },
     { name = "pandas" },
     { name = "psycopg2-binary" },
     { name = "scikit-learn" },
@@ -1379,6 +1380,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "joblib", specifier = ">=1.6.0" },
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "psycopg2-binary", specifier = ">=2.9.13" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
