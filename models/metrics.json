@@ -1,0 +1,17 @@
+[
+  {
+    "trained_at": "2026-09-24T03:51:26.205092+00:00",
+    "model": "xgboost",
+    "auc": 0.8788,
+    "features": [
+      "sessions_3d",
+      "active_days_3d",
+      "day1_share",
+      "listen_share",
+      "avg_session_minutes",
+      "total_minutes_3d",
+      "country",
+      "device_type"
+    ]
+  }
+]
