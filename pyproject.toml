@@ -7,7 +7,13 @@ authors = [
     { name = "Efe Ogolo", email = "omohiefeogolo@email.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pandas>=3.0.6",
+    "psycopg2-binary>=2.9.13",
+    "scikit-learn>=1.9.1",
+    "sqlalchemy>=2.0.54",
+    "xgboost>=3.4.1",
+]
 
 [project.scripts]
 trial-conversion-model-2 = "trial_conversion_model_2:main"
@@ -15,3 +21,9 @@ trial-conversion-model-2 = "trial_conversion_model_2:main"
 [build-system]
 requires = ["uv_build>=0.12.16,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.2",
+]
