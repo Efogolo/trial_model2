@@ -1,18 +1,10 @@
-import os
-from getpass import getpass
-
-from trial_conversion_model_2.data import load_trials, clean_trials, save_processed_data
-from trial_conversion_model_2.features import add_features, encode_features, FEATURES
+from trial_conversion_model_2.data import load_processed_data
+from trial_conversion_model_2.features import encode_features, FEATURES
 from trial_conversion_model_2.train import split_data, train_model, evaluate_model, save_model, save_metrics
 
 
 def main():
-    db_password = os.environ.get("DB_PASSWORD") or getpass("Database password: ")
-
-    df = load_trials(db_password)
-    df = clean_trials(df)
-    df = add_features(df)
-    save_processed_data(df)
+    df = load_processed_data()
 
     X = encode_features(df)
     y = df["converted"]
